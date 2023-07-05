@@ -1,0 +1,111 @@
+# Starting with the "root" element.
+<MyRoot>
+
+    # The cal_field in the program is going to be the same as the cal_field in this design.
+    calc_field: calc_field
+
+    orientation: 'vertical'
+    # Creating the desired text window.
+    TextInput:
+        id: calc_field
+        # Overwriting the size_hint function.
+        size_hint: (1, 0.47)
+        readonly: True
+        disabled: True
+        font_size: 145
+    # Creating the desired grid layout.
+    GridLayout:
+        rows: 4
+        columns: 10
+        padding: 10
+        spacing: 10
+        # Overwriting the size_hint function.
+        size_hint: (1, 0.5)
+        # Initializing the appropriate buttons.
+        Button:
+            text: "1"
+            font_size: 70
+            on_press: root.calc_symbol('1')
+        Button:
+            text: "2"
+            font_size: 70
+            on_press: root.calc_symbol('2')
+        Button:
+            text: "3"
+            font_size: 60
+            on_press: root.calc_symbol('3')
+        Button:
+            text: "+"
+            font_size: 85
+            on_press: root.calc_symbol('+')
+        Button:
+            text: "4"
+            font_size: 70
+            on_press: root.calc_symbol('4')
+        Button:
+            text: "5"
+            font_size: 70
+            on_press: root.calc_symbol('5')
+        Button:
+            text: "6"
+            font_size: 70
+            on_press: root.calc_symbol('6')
+        Button:
+            text: "-"
+            font_size: 85
+            on_press: root.calc_symbol('-')
+        Button:
+            text: "7"
+            font_size: 70
+            on_press: root.calc_symbol('7')
+        Button:
+            text: "8"
+            font_size: 70
+            on_press: root.calc_symbol('8')
+        Button:
+            text: "9"
+            font_size: 70
+            on_press: root.calc_symbol('9')
+        Button:
+            text: "*"
+            font_size: 85
+            on_press: root.calc_symbol('*')
+        Button:
+            text: "("
+            font_size: 70
+            on_press: root.calc_symbol('(')
+        Button:
+            text: "0"
+            font_size: 70
+            on_press: root.calc_symbol('0')
+        Button:
+            text: ")"
+            font_size: 70
+            on_press: root.calc_symbol(')')
+        Button:
+            text: "/"
+            font_size: 85
+            on_press: root.calc_symbol('/')
+    # Creating the desired box layout.
+    BoxLayout:
+        orientation: 'horizontal'
+        padding: 7
+        spacing: 7
+        # Overwriting the size_hint function.
+        size_hint: (1, 0.2)
+        Button:
+            text: "."
+            font_size: 85
+            on_press: root.calc_symbol('.')
+        Button:
+            text: "C"
+            font_size: 85
+            on_press: root.clear()
+        Button:
+            text: "Del"
+            font_size: 85
+            on_press: root.clear_last()
+        Button:
+            text: "="
+            font_size: 85
+            on_press: root.get_result()
